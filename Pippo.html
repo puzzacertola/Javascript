@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head> <!-- in head si mettono le richieste di link esterni e i dati necessari alla comunicazione-->
+    <h1>sono un titolo e sono più grande</h1>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #draggable { width: 150px; height: 150px; padding: 0.5em; }
+    </style>
+    <style>
+        #button {width: 200px; height: 100px; padding: 0.5em;}
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {<!-- il simbolo $ indica una Jquery-->
+            $( '#draggable' ).draggable();
+            $('button').click(function(event){event.preventDefault();
+                $('#draggable p').html('click');
+            });
+        } );
+        <!-- #  significa cerca nella pagina un eleento con id pari a quello dopo in questo caso droppable -->
+        <!-- la funzione.draggable sta in jquery library inclusa prima -->
+        <!-- "" e '' sono la stesa cosa per le stringhe -->
+    </script>
+</head>
+<body>
+<div class=" ui-widget-content">
+    <button id = 'button'>bottone</button>
+
+</div>
+
+<!-- div descrive un elemento che non viene utilizzato ma usato quado viene chiamato il suo id -->
+<!-- div è tipo una funzione -->
+<div id="draggable" class="ui-widget-content">
+    <!-- se uso <p> identifico la linea in modo da poter cambiare il suo contenuto in maniera indipendente -->
+    <p>Drag me around or not</p>
+    io non cambio
+</div>
+
+
+</body>
+</html>
